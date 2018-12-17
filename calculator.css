@@ -1,0 +1,266 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  background-color: rgba(139, 69, 69, 0.014);
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+}
+
+.container{
+  display: grid;
+  grid-template: 2.5fr 2.5fr 2fr 2fr 2fr 2fr 2fr 2fr / 2fr 2fr 2fr 2fr;
+  height: 400px;
+  width: 80%;
+  align-items: center;
+  grid-template-areas: "out out out out"
+                       "output output output output"
+                       "openB closeB per AC"
+                       "seven eight nine forSlash"
+                       "four five six multi"
+                       "one two three minus"
+                       "zerox dott equal plus"
+                       "ans . . .";
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  padding: 0px 10px 5px;
+}
+
+.out {
+  height: 40px;
+  width: 100%;
+  text-align: end;
+  grid-area: out;
+  font-weight: 650;
+  padding-top: 10px;
+  font-size: 30px;
+  color: #969696;
+  font-family: Arial;
+}
+
+.output {
+  height: 40px;
+  width: 100%;
+  grid-area: output;
+  text-align: end;
+  font-weight: 650;
+  padding-top: 7px;
+  font-size: 30px;
+  font-family: Helvetica;
+}
+
+.a {
+  background-color: #D4D4D4;
+  width: 100%;
+  height: 100%;
+  grid-area: openB;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.b {
+  background-color: #D4D4D4;
+  width: 100%;
+  height: 100%;
+  grid-area: closeB;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.c {
+  background-color: #D4D4D4;
+  width: 100%;
+  height: 100%;
+  grid-area: per;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.d {
+  background-color: #D4D4D4;
+  width: 100%;
+  height: 100%;
+  grid-area: AC;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.e {
+  background-color: #F4F4F4;
+  width: 100%;
+  height: 100%;
+  grid-area: seven;
+  border: 1px rgb(92, 83, 72) solid;
+  border-radius: 5px;
+}
+
+.f {
+  background-color: #F4F4F4;
+  width: 100%;
+  height: 100%;
+  grid-area: eight;
+  border: 1px rgb(92, 83, 72) solid;
+  border-radius: 5px;
+}
+
+.g {
+  background-color: #F4F4F4;
+  width: 100%;
+  height: 100%;
+  grid-area: nine;
+  border: 1px rgb(92, 83, 72) solid;
+  border-radius: 5px;
+}
+
+.h {
+  background-color: #D4D4D4;
+  width: 100%;
+  height: 100%;
+  grid-area: forSlash;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.i {
+  background-color: #F4F4F4;
+  width: 100%;
+  height: 100%;
+  grid-area: four;
+  border: 1px rgb(92, 83, 72) solid;
+  border-radius: 5px;
+}
+
+.j {
+  background-color: #F4F4F4;
+  width: 100%;
+  height: 100%;
+  grid-area: five;
+  border: 1px rgb(92, 83, 72) solid;
+  border-radius: 5px;
+}
+
+.k {
+  background-color: #F4F4F4;
+  width: 100%;
+  height: 100%;
+  grid-area: six;
+  border: 1px rgb(92, 83, 72) solid;
+  border-radius: 5px;
+}
+
+.l {
+  background-color: #D4D4D4;
+  width: 100%;
+  height: 100%;
+  grid-area: multi;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.m {
+  background-color: #F4F4F4;
+  width: 100%;
+  height: 100%;
+  grid-area: one;
+  border: 1px rgb(92, 83, 72) solid;
+  border-radius: 5px;
+}
+
+.n {
+  background-color: #F4F4F4;
+  width: 100%;
+  height: 100%;
+  grid-area: two;
+  border: 1px rgb(92, 83, 72) solid;
+  border-radius: 5px;
+}
+
+.o {
+  background-color: #F4F4F4;
+  width: 100%;
+  height: 100%;
+  grid-area: three;
+  border: 1px rgb(92, 83, 72) solid;
+  border-radius: 5px;
+}
+
+.p {
+  background-color: #D4D4D4;
+  width: 100%;
+  height: 100%;
+  grid-area: minus;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.q {
+  background-color: #F4F4F4;
+  width: 100%;
+  height: 100%;
+  grid-area: zerox;
+  border: 1px rgb(92, 83, 72) solid;
+  border-radius: 5px;
+}
+
+.r {
+  background-color: #F4F4F4;
+  width: 100%;
+  height: 100%;
+  grid-area: dott;
+  border: 1px rgb(92, 83, 72) solid;
+  border-radius: 5px;
+}
+
+.s {
+  background-color: #4689F7;
+  color: #FEFEFE;
+  width: 100%;
+  height: 100%;
+  grid-area: equal;
+  border: 1px rgb(92, 83, 72) solid;
+  border-radius: 5px;
+}
+
+.t {
+  background-color: #D4D4D4;
+  width: 100%;
+  height: 100%;
+  grid-area: plus;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.u {
+  background-color: #D4D4D4;
+  width: 100%;
+  height: 100%;
+  grid-area: ans;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+p {
+  text-align: center;
+  margin: 19px auto;
+  font-family: helvetica;
+  font-weight: 650;
+}
+
+
+
+
+@media only screen and (min-width: 400px) {
+
+  .container{
+  height: 400px;
+  width: 420px;
+}
+
+}
