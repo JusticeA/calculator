@@ -6,4 +6,5 @@ This is a calculator created from pure *HTML* *CSS*, **_Vanilla JavaScript_** an
 * Justice
 
 ## GitHub Pages 
-![Calculator preview]{}
+[Calculator preview](https://www.justicea.github.io/calculator/)
+
