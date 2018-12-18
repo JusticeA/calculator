@@ -30,7 +30,7 @@
 body {
   display: flex;
   background-color: rgba(139, 69, 69, 0.014);
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   height: 500px;
