@@ -1,8 +1,30 @@
-
-
 * {
   margin: 0;
   padding: 0;
+}
+
+@font-face {
+  font-family: 'Major Mono Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Major Mono Display Regular'), local('MajorMonoDisplay-Regular'), url(https://fonts.gstatic.com/s/majormonodisplay/v1/RWmVoLyb5fEqtsfBX9PDZIGr2tFubRh7DXeRAHRfwg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Monofett';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Monofett'), url(https://fonts.gstatic.com/s/monofett/v8/mFTyWbofw6zc9NtnW73Vsx0J0kJ6.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Mono'), local('RobotoMono-Regular'), url(https://fonts.gstatic.com/s/robotomono/v5/L0x5DF4xlVMF-BfR8bXMIjhLq3-cXbKD.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 body {
@@ -11,7 +33,41 @@ body {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  height: 700px;
+  height: 500px;
+  background-color: rgba(38, 67, 128, 0.212)
+}
+
+.calc {
+  width: 320px;
+  height: 50px;
+  text-align: center;
+  padding-top: 10px;
+  margin-top: 35px;
+  font-size: 24px;
+  font-family: "Monofett";
+  animation-name: calculator;
+  animation-duration: 1.5s;
+  animation-delay: 0.5s;
+  position: relative;
+}
+
+@keyframes calculator {
+  0% {
+    color: rgba(80, 52, 27, 0.829);
+    left: 20px;
+  }
+  25% {
+    top: 10px;
+    color: rgba(87, 24, 63, 0.774);
+  }
+  50% {
+    right: 20px;
+    color: rgba(88, 23, 32, 0.774)
+  }
+  100% {
+    bottom: 10px;
+    color: rgba(74, 87, 18, 0.774);
+  }
 }
 
 .container{
@@ -34,26 +90,29 @@ body {
 }
 
 .out {
-  height: 40px;
+  height: 30px;
   width: 100%;
   text-align: end;
   grid-area: out;
-  font-weight: 650;
-  padding-top: 10px;
-  font-size: 30px;
+  font-weight: 400;
+  padding-top: 50px;
+  font-size: 18px;
   color: #969696;
   font-family: Arial;
 }
 
 .output {
   height: 40px;
-  width: 100%;
+  width: 94%;
   grid-area: output;
   text-align: end;
-  font-weight: 650;
+  font-weight: 100;
   padding-top: 7px;
   font-size: 30px;
+  color: #222222;
   font-family: Helvetica;
+  border: 1px solid #B9B9B9;
+  padding-right: 23px;
 }
 
 .a {
