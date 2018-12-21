@@ -83,7 +83,7 @@ body {
                        "four five six multi"
                        "one two three minus"
                        "zerox dott equal plus"
-                       "ans . . .";
+                       "ans ans back back";
   grid-row-gap: 10px;
   grid-column-gap: 10px;
   padding: 0px 10px 5px;
@@ -297,10 +297,20 @@ body {
 }
 
 .u {
-  background-color: #D4D4D4;
+  background-color: rgb(108, 187, 89);
   width: 100%;
   height: 100%;
   grid-area: ans;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.v {
+  background-color: rgb(226, 94, 94);
+  color: rgb(56, 55, 55);
+  width: 100%;
+  height: 100%;
+  grid-area: back;
   border: 1px black solid;
   border-radius: 5px;
 }

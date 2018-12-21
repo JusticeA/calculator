@@ -20,7 +20,6 @@ function grab() {
 }
 
 
-
 p[0].addEventListener("click", grab); // This is "("
 p[1].addEventListener("click", grab); // This is ")"
 p[2].addEventListener("click", function percent() {
