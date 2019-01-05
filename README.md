@@ -1,6 +1,6 @@
 # Testing my Skills in HTML, CSS and JavaScript
 
-This is a calculator created from pure *HTML* *CSS*, **_Vanilla JavaScript_** and *Babel* - transpile ES6+ to ES5
+This is a calculator developed using pure *HTML* *CSS*, **_Vanilla JavaScript_** and *Babel* - transpile ES6+ to ES5
 
 ## Author
 * Justice
