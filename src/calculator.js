@@ -1,94 +1,114 @@
-//alert("It is working");
-
-let p = document.getElementsByTagName("p");
-let output = document.getElementById("output");
+//Declare Variables
+let ops = document.querySelectorAll("BUTTON");
+let output = document.querySelector(".output");
 let out = document.getElementById("out");
+let calcSound = document.querySelectorAll("audio");
 let Ans;
 
-// Grab Numbers
-function grabNums() {
-    output.innerHTML += this.innerHTML;
-    console.log((output.innerHTML));
-    p[3].innerHTML = "CE";
-    out.innerHTML = "Ans = "
-}
+// Functions
 
 //Grab arithmetic operators
 function grab() {
-    output.innerHTML += ` ${(this.innerHTML)} `;
-    p[3].innerHTML = "CE";
+  calcSound[0].play();
+  let that = this;
+  if (that.getAttribute("id") == "dist") {
+    //Grab arithmetic operators
+    output.value += ` ${that.innerHTML} `;
+    ops[3].innerHTML = "CE";
+  } else if (that.getAttribute("id") == "perc") {
+    percent();
+  } else if (that.getAttribute("id") == "clr") {
+    clearDisplay();
+  } else if (that.getAttribute("id") == "multi") {
+    multiply();
+  } else if (that.getAttribute("id") == "equal") {
+    evaluate();
+  } else if (that.getAttribute("id") == "ans") {
+    previousAnswer();
+  } else if (that.getAttribute("id") == "bs") {
+    back();
+  } else {
+    // Grab numbers
+    output.value += that.innerHTML;
+    // console.log((output.value));
+    ops[3].innerHTML = "CE";
+    out.innerHTML = "Ans = ";
+  }
 }
+// Percentage
+function percent() {
+  //Convert previous input to percentage so the equal to button won't confuse it for modulus
+  if (output.value == "" || output.value == 0) {
+    output.value = "";
+  } // The if statement checks out for output.value, if it's empty, it returns nothing. The else statement on the other hand returns the value found divided by 100.
+  else {
+    let arr = output.value.split(" ");
+    let per = parseInt(arr[arr.length - 1]) / 100;
+    arr[arr.length - 1] = "";
+    let newArr = arr.join(" ");
+    output.value = "";
+    output.value += `${newArr} ${per}`;
+  }
+} // This is "%"
+// Clear Display
+function clearDisplay() {
+  // To print out "Ans =" if symbols are detected and print out  "Ans = output.value" when a number/integer is detected -- Check the else statement.
+  if (
+    output.value.indexOf("/") > -1 ||
+    output.value.indexOf("*") > -1 ||
+    output.value.indexOf("-") > -1 ||
+    output.value.indexOf("+") > -1 ||
+    output.value.indexOf("%") > -1 ||
+    output.value.indexOf("(") > -1 ||
+    output.value.indexOf(")") > -1
+  ) {
+    output.value = null;
+    out.innerHTML = " Ans = " + output.value;
+  } else {
+    out.innerHTML = " Ans = " + output.value;
+    output.value = null;
+  }
+} // This is "AC"
 
-
-p[0].addEventListener("click", grab); // This is "("
-p[1].addEventListener("click", grab); // This is ")"
-p[2].addEventListener("click", function percent() {
-    //Convert previous input to percentage so the equal to button won't confuse it for modulus
-    if (output.innerHTML == "" || output.innerHTML == 0) {
-        output.innerHTML = ""
-
-    } // The if statement checks out for output.innerHTML, if it's empty, it returns nothing. The else statement on the other hand returns the value found divided by 100.
-    else {
-        let arr = output.innerHTML.split(" ")
-
-        let per = parseInt(arr[(arr.length) - 1]) / 100;
-
-        arr[(arr.length) - 1] = "";
-        let newArr = arr.join(" ")
-
-        output.innerHTML = ""
-        output.innerHTML += `${newArr} ${per}`;
-    }
-
-}); // This is "%"
-p[3].addEventListener("click", function clearDisplay() {
-    // To print out "Ans =" if symbols are detected and print out  "Ans = output.innerHTML" when a number/integer is detected -- Check the else statement.
-    if ((output.innerHTML).indexOf("/") > -1 || (output.innerHTML).indexOf("*") > -1 || (output.innerHTML).indexOf("-") > -1 || (output.innerHTML).indexOf("+") > -1 || (output.innerHTML).indexOf("%") > -1 || (output.innerHTML).indexOf("(") > -1 || (output.innerHTML).indexOf(")") > -1) {
-        output.innerHTML = null;
-        out.innerHTML = " Ans = " + output.innerHTML;
-    } else {
-        out.innerHTML = " Ans = " + output.innerHTML;
-        output.innerHTML = null;
-    }
-
-}); // This is "AC"
-p[4].addEventListener("click", grabNums); // This is "7"
-p[5].addEventListener("click", grabNums); // This is "8"
-p[6].addEventListener("click", grabNums); // This is "9"
-p[7].addEventListener("click", grab); // This is "/"
-p[8].addEventListener("click", grabNums); // This is "4"
-p[9].addEventListener("click", grabNums); // This is "5"
-p[10].addEventListener("click", grabNums); // This is "6"
-p[11].addEventListener("click", function multiply() {
-    output.innerHTML += " * ";
-}); // This is "*"
-p[12].addEventListener("click", grabNums); // This is "1"
-p[13].addEventListener("click", grabNums); // This is "2"
-p[14].addEventListener("click", grabNums); // This is "3"
-p[15].addEventListener("click", grab); // This is "-"
-p[16].addEventListener("click", grabNums); // This is "0"
-p[17].addEventListener("click", grab); // This is "."
+// Multiply
+const multiply = () => {
+  output.value += " * ";
+}; // This is "*"
 
 // To output evaluation
-p[18].addEventListener("click", function equal() {
+const evaluate = () => {
+  out.innerHTML = output.value + " = ";
+  output.value = eval(output.value).toPrecision(3);
+}; // This is "="
 
-    console.log(eval(output.innerHTML));
-    out.innerHTML = output.innerHTML + " = "
-    output.innerHTML = eval(output.innerHTML).toFixed(4);
-}); // This is "="
+// To get previous answer
+const previousAnswer = function() {
+  if (output.value == "") {
+    let arr = out.innerHTML.split(" ");
+    let Ans = parseFloat(arr[arr.length - 1]);
+    output.value = Ans;
+  } else {
+    Ans = parseFloat(output.value);
+    output.value = "Ans";
+  }
+};
 
-p[19].addEventListener("click", grab); // This is "+"
-document.querySelector(".u").addEventListener("click", function previousAnswer() {
-    if (output.innerHTML == "") {
-        let arr = out.innerHTML.split(" ");
-        console.log(arr);
-        let Ans = (parseFloat(arr[arr.length - 1]));
-        console.log(Ans)
-        output.innerHTML = Ans;
-    } else {
-        Ans = parseFloat(output.innerHTML);
-        output.innerHTML = "Ans"
-        console.log(Ans)
-    }
+function back() {
+  let backSpace = output.value.substring(0, output.value.length - 1);
+  output.value = backSpace;
+}
 
-})
+// Event Listeners
+ops.forEach(op => {
+  op.addEventListener("click", grab);
+});
+
+window.addEventListener("keyup", e => {
+  e.preventDefault();
+  if (e.code == "Enter") {
+    calcSound[1].play();
+    evaluate();
+  } else if (e.keyCode == 8) {
+    back();
+  }
+});

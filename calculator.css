@@ -4,37 +4,17 @@
 }
 
 @font-face {
-  font-family: 'Major Mono Display';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Major Mono Display Regular'), local('MajorMonoDisplay-Regular'), url(https://fonts.gstatic.com/s/majormonodisplay/v1/RWmVoLyb5fEqtsfBX9PDZIGr2tFubRh7DXeRAHRfwg.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: 'Monofett';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Monofett'), url(https://fonts.gstatic.com/s/monofett/v8/mFTyWbofw6zc9NtnW73Vsx0J0kJ6.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: 'Roboto Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto Mono'), local('RobotoMono-Regular'), url(https://fonts.gstatic.com/s/robotomono/v5/L0x5DF4xlVMF-BfR8bXMIjhLq3-cXbKD.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: "Digital";
+  src: url(Font/digital-7.ttf) format("truetype")
 }
 
 body {
   display: flex;
-  background-color: rgba(139, 69, 69, 0.014);
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   height: 500px;
-  background-color: rgba(38, 67, 128, 0.212)
+  background-color: rgba(31, 3, 37, 0.76)
 }
 
 .calc {
@@ -44,30 +24,8 @@ body {
   padding-top: 10px;
   margin-top: 35px;
   font-size: 24px;
-  font-family: "Monofett";
-  animation-name: calculator;
-  animation-duration: 1.5s;
-  animation-delay: 0.5s;
   position: relative;
-}
-
-@keyframes calculator {
-  0% {
-    color: rgba(80, 52, 27, 0.829);
-    left: 20px;
-  }
-  25% {
-    top: 10px;
-    color: rgba(87, 24, 63, 0.774);
-  }
-  50% {
-    right: 20px;
-    color: rgba(88, 23, 32, 0.774)
-  }
-  100% {
-    bottom: 10px;
-    color: rgba(74, 87, 18, 0.774);
-  }
+  font-family: "Digital";
 }
 
 .container{
@@ -97,7 +55,7 @@ body {
   font-weight: 400;
   padding-top: 50px;
   font-size: 18px;
-  color: #969696;
+  color: white;
   font-family: Arial;
 }
 
@@ -106,213 +64,123 @@ body {
   width: 94%;
   grid-area: output;
   text-align: end;
-  font-weight: 100;
-  padding-top: 7px;
+  font-weight: 300;
+  padding-top: -7px;
   font-size: 30px;
-  color: #222222;
-  font-family: Helvetica;
+  color: black;
   border: 1px solid #B9B9B9;
   padding-right: 23px;
 }
 
 .a {
-  background-color: #D4D4D4;
-  width: 100%;
-  height: 100%;
   grid-area: openB;
-  border: 1px black solid;
-  border-radius: 5px;
 }
 
 .b {
-  background-color: #D4D4D4;
-  width: 100%;
-  height: 100%;
+ 
   grid-area: closeB;
-  border: 1px black solid;
-  border-radius: 5px;
 }
 
 .c {
   background-color: #D4D4D4;
-  width: 100%;
-  height: 100%;
   grid-area: per;
-  border: 1px black solid;
-  border-radius: 5px;
 }
 
 .d {
   background-color: #D4D4D4;
-  width: 100%;
-  height: 100%;
   grid-area: AC;
-  border: 1px black solid;
-  border-radius: 5px;
 }
 
 .e {
   background-color: #F4F4F4;
-  width: 100%;
-  height: 100%;
   grid-area: seven;
-  border: 1px rgb(92, 83, 72) solid;
-  border-radius: 5px;
 }
 
 .f {
   background-color: #F4F4F4;
-  width: 100%;
-  height: 100%;
   grid-area: eight;
-  border: 1px rgb(92, 83, 72) solid;
-  border-radius: 5px;
 }
 
 .g {
   background-color: #F4F4F4;
-  width: 100%;
-  height: 100%;
   grid-area: nine;
-  border: 1px rgb(92, 83, 72) solid;
-  border-radius: 5px;
 }
 
 .h {
   background-color: #D4D4D4;
-  width: 100%;
-  height: 100%;
   grid-area: forSlash;
-  border: 1px black solid;
-  border-radius: 5px;
 }
 
 .i {
   background-color: #F4F4F4;
-  width: 100%;
-  height: 100%;
   grid-area: four;
-  border: 1px rgb(92, 83, 72) solid;
-  border-radius: 5px;
 }
 
 .j {
   background-color: #F4F4F4;
-  width: 100%;
-  height: 100%;
   grid-area: five;
-  border: 1px rgb(92, 83, 72) solid;
-  border-radius: 5px;
 }
 
 .k {
   background-color: #F4F4F4;
-  width: 100%;
-  height: 100%;
   grid-area: six;
-  border: 1px rgb(92, 83, 72) solid;
-  border-radius: 5px;
 }
 
 .l {
   background-color: #D4D4D4;
-  width: 100%;
-  height: 100%;
   grid-area: multi;
-  border: 1px black solid;
-  border-radius: 5px;
 }
 
 .m {
   background-color: #F4F4F4;
-  width: 100%;
-  height: 100%;
   grid-area: one;
-  border: 1px rgb(92, 83, 72) solid;
-  border-radius: 5px;
 }
 
 .n {
   background-color: #F4F4F4;
-  width: 100%;
-  height: 100%;
   grid-area: two;
-  border: 1px rgb(92, 83, 72) solid;
-  border-radius: 5px;
 }
 
 .o {
   background-color: #F4F4F4;
-  width: 100%;
-  height: 100%;
   grid-area: three;
-  border: 1px rgb(92, 83, 72) solid;
-  border-radius: 5px;
 }
 
 .p {
   background-color: #D4D4D4;
-  width: 100%;
-  height: 100%;
   grid-area: minus;
-  border: 1px black solid;
-  border-radius: 5px;
 }
 
 .q {
   background-color: #F4F4F4;
-  width: 100%;
-  height: 100%;
   grid-area: zerox;
-  border: 1px rgb(92, 83, 72) solid;
-  border-radius: 5px;
 }
 
 .r {
   background-color: #F4F4F4;
-  width: 100%;
-  height: 100%;
   grid-area: dott;
-  border: 1px rgb(92, 83, 72) solid;
-  border-radius: 5px;
 }
 
 .s {
   background-color: #4689F7;
   color: #FEFEFE;
-  width: 100%;
-  height: 100%;
   grid-area: equal;
-  border: 1px rgb(92, 83, 72) solid;
-  border-radius: 5px;
 }
 
 .t {
   background-color: #D4D4D4;
-  width: 100%;
-  height: 100%;
   grid-area: plus;
-  border: 1px black solid;
-  border-radius: 5px;
 }
 
 .u {
   background-color: rgb(108, 187, 89);
-  width: 100%;
-  height: 100%;
   grid-area: ans;
-  border: 1px black solid;
-  border-radius: 5px;
 }
 
 .v {
   background-color: rgb(226, 94, 94);
   color: rgb(56, 55, 55);
-  width: 100%;
-  height: 100%;
   grid-area: back;
-  border: 1px black solid;
-  border-radius: 5px;
 }
 
 p {
@@ -322,11 +190,21 @@ p {
   font-weight: 650;
 }
 
+* button{
+  font-weight: 650;
+  font-size: 16px;
+  background-color: #D4D4D4;
+  width: 100%;
+  height: 55px;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+
 
 
 
 @media only screen and (min-width: 400px) {
-
   .container{
   height: 400px;
   width: 420px;
